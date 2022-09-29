@@ -2,6 +2,7 @@ package com.example.thebank.controllers;
 
 import com.example.thebank.Models.User;
 import com.example.thebank.Repository.Repository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MainController {
-
+    @Autowired
+    private Repository repository;
     @GetMapping("/")
     public String Main(Model model){
         return "home";
@@ -26,7 +28,7 @@ public class MainController {
     @PostMapping("/LogOut")
     public String blogPostAdd(@RequestParam String Name, @RequestParam String Surname, @RequestParam String Email, @RequestParam String Password, Model model){
         User user = new User(Name,Surname,Email, Password);
-        Repository.save(user);
+        repository.save(user);
         return "redirect:/";
     }
 }
