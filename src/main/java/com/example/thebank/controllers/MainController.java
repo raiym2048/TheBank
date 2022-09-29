@@ -1,5 +1,7 @@
 package com.example.thebank.controllers;
 
+import com.example.thebank.Models.User;
+import com.example.thebank.Repository.Repository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,9 +24,9 @@ public class MainController {
         return "LogOut";
     }
     @PostMapping("/LogOut")
-    public String blogPostAdd(@RequestParam String title, @RequestParam String anons, @RequestParam String full_text, @RequestParam String prize, Model model){
-        Post post = new Post(title,anons,full_text, prize);
-        postRepository.save(post);
-        return "redirect:/blog";
+    public String blogPostAdd(@RequestParam String Name, @RequestParam String Surname, @RequestParam String Email, @RequestParam String Password, Model model){
+        User user = new User(Name,Surname,Email, Password);
+        Repository.save(user);
+        return "redirect:/";
     }
 }
