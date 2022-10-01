@@ -1,18 +1,18 @@
 package com.example.thebank.service;
 
 
-import com.example.thebank.Models.User;
+import com.example.thebank.models.Post;
 
 import java.util.List;
 
 public interface EmpService {
-    List<User> getAllEmp();
+    List<Post> getAllEmp();
 
-    User saveEmp(User employee);
+    Post saveEmp(Post employee);
 
-    User getEmpById(Long id);
+    Post getEmpById(Long id);
 
-    User updateEmp(User employee);
+    Post updateEmp(Post employee);
 
     void deleteEmpById(Long id);
 }

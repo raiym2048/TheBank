@@ -1,8 +1,7 @@
 package com.example.thebank.service;
 
-import com.example.thebank.Models.User;
-import com.example.thebank.Repository.Repository;
-
+import com.example.thebank.models.Post;
+import com.example.thebank.repository.PostRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,29 +9,29 @@ import java.util.List;
 @Service
 public class EmpServiceImpl implements EmpService{
 
-    private Repository postRepository;
+    private PostRepository postRepository;
 
-    public EmpServiceImpl(Repository employeeRepository) {
+    public EmpServiceImpl(PostRepository employeeRepository) {
         this.postRepository = employeeRepository;
     }
 
     @Override
-    public List<User> getAllEmp() {
-        return (List<User>) postRepository.findAll();
+    public List<Post> getAllEmp() {
+        return (List<Post>) postRepository.findAll();
     }
 
     @Override
-    public User saveEmp(User employee) {
+    public Post saveEmp(Post employee) {
         return postRepository.save(employee);
     }
 
     @Override
-    public User getEmpById(Long id) {
+    public Post getEmpById(Long id) {
         return postRepository.findById(id).get();
     }
 
     @Override
-    public User updateEmp(User employee) {
+    public Post updateEmp(Post employee) {
         return postRepository.save(employee);
     }
 
