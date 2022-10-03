@@ -10,10 +10,11 @@
 
 <div class="container mt-5">
     <h1>Блог сайта</h1>
-    <div th:each="el : ${posts}" class="alert alert-info mt-2">
-        <h3 th:text="${el.title}"/>
-        <p th:text="${el.anons}"/>
-        <p th:text="${el.prize}"/>
+    <div th:each="el : ${user}" class="alert alert-info mt-2">
+        <h3 th:text="Name  +  ${el.name}"/>
+        <p th:text="Surname + ${el.surname}"/>
+        <p th:text="Password + ${el.password}"/>
+        <p th:text="Balance + ${el.balance}"/>
         <a th:href="'/blog/' + ${el.id}" class="btn btn-warning">Детальнее</a>
     </div>
 </div>

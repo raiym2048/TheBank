@@ -10,12 +10,13 @@
 
 <div class="container mt-5 mb-5" >
     <h1>edit статьи</h1>
-    <div th:each="el : ${post}">
+    <div th:each="el : ${user}">
         <form method="post">
-            <input type="text" th:value="${el.title}" name="title" placeholder="write сатьи" class="form-control"><br>
-            <input type="text" th:value="${el.anons}" name="anons" placeholder="write anons" class="form-control"><br>
-            <input type="text" th:value="${el.prize}" name="prize" placeholder="write anons" class="form-control"><br>
-            <textarea name="full_text"  placeholder="write full_text" class="form-control" th:text="${el.full_text}"/><br>
+            <input type="text" th:value="${el.name}" name="title" placeholder="write сатьи" class="form-control"><br>
+            <input type="text" th:value="${el.surname}" name="anons" placeholder="write anons" class="form-control"><br>
+            <input type="text" th:value="${el.password}" name="prize" placeholder="write anons" class="form-control"><br>
+            <textarea name="full_text"  placeholder="write full_text" class="form-control" th:text="${el.email}"/><br>
+            <input type="text" th:value="${el.balance}" name="prize" placeholder="write anons" class="form-control"><br>
             <button type="submit" class="btn btn-success">edit статью</button>
         </form>
     </div>

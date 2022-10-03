@@ -11,35 +11,52 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String title;
+    private String name, surname, email, password;
 
-    public Post(Long id, String title, String anons, String full_text, String prize) {
+    private int balance;
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+
+
+    public Post(Long id, String name, String surname, String email, String password) {
         this.id = id;
-        this.title = title;
-        this.anons = anons;
-        this.full_text = full_text;
-        this.prize = prize;
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.password = password;
     }
-
-    private String anons;
-    private String full_text;
-    private String prize;
-
-    public String getPrize() {
-        return prize;
-    }
-
-    public void setPrize(String prize) {
-        this.prize = prize;
+    public Post(String name, String surname, String email, String password, int balance) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.password = password;
+        this.balance = balance;
     }
 
 
 
-    public Post(String title, String anons, String full_text, String prize) {
-        this.title = title;
-        this.anons = anons;
-        this.full_text = full_text;
-        this.prize = prize;
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+
+
+    public Post(String name, String surname, String email, String password) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.password = password;
     }
 
     public Post() {
@@ -53,36 +70,36 @@ public class Post {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getAnons() {
-        return anons;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setAnons(String anons) {
-        this.anons = anons;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
-    public String getFull_text() {
-        return full_text;
+    public String getEmail() {
+        return email;
     }
 
-    public void setFull_text(String full_text) {
-        this.full_text = full_text;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getViews() {
-        return prize;
-    }
+  /*  public String getViews() {
+        return password;
+    }*/
 
-    public void setViews(String prize) {
-        this.prize = prize;
-    }
+    /*public void setViews(String password) {
+        this.password = password;
+    }*/
 
 }
