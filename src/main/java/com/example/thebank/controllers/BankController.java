@@ -24,11 +24,11 @@ public class BankController {
     @Autowired
     private EmailRepository emailRepository;
 
-    @GetMapping("/SignIn")
+    @GetMapping("/reg")
     public String SignIn(Model model){
         return "signIn";
     }
-    @PostMapping("SignIn")
+    @PostMapping("/reg")
     public String Sign(@RequestParam String email, @RequestParam String password, Model model) {
         User user = new User(email, password);
         emailRepository.save(user);
