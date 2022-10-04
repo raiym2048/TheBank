@@ -1,11 +1,8 @@
 package com.example.thebank.controllers;
 
 import com.example.thebank.models.Post;
-import com.example.thebank.models.User;
-import com.example.thebank.repository.EmailRepository;
 import com.example.thebank.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,19 +18,7 @@ public class BankController {
 
     @Autowired
     private UserRepository userRepository;
-    @Autowired
-    private EmailRepository emailRepository;
 
-    @GetMapping("/reg")
-    public String SignIn(Model model){
-        return "signIn";
-    }
-    @PostMapping("/reg")
-    public String Sign(@RequestParam String email, @RequestParam String password, Model model) {
-        User user = new User(email, password);
-        emailRepository.save(user);
-        return "home";
-    }
 
     @GetMapping("/blog")
     public String blogMain(Model model){

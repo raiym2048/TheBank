@@ -1,19 +1,18 @@
 package com.example.thebank.service;
 
 
-import com.example.thebank.models.Post;
-import com.example.thebank.models.User;
+import com.example.thebank.models.User1;
 
 import java.util.List;
 
 public interface EmaService {
-    List<User> getAllEma();
+    List<User1> getAllEma();
 
-    User saveEma(User employee);
+    User1 saveEma(User1 employee);
 
-    User getEmaById(Long id);
+    User1 getEmaById(Long id);
 
-    User updateEma(User employee);
+    User1 updateEma(User1 employee);
 
     void deleteEmaById(Long id);
 }

@@ -1,6 +1,6 @@
 package com.example.thebank.service;
 
-import com.example.thebank.models.User;
+import com.example.thebank.models.User1;
 import com.example.thebank.repository.EmailRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,22 +16,22 @@ public class EmaServicelmpl implements EmaService{
     }
 
     @Override
-    public List<User> getAllEma() {
-        return (List<User>) userRepository.findAll();
+    public List<User1> getAllEma() {
+        return (List<User1>) userRepository.findAll();
     }
 
     @Override
-    public User saveEma(User employee) {
+    public User1 saveEma(User1 employee) {
         return userRepository.save(employee);
     }
 
     @Override
-    public User getEmaById(Long id) {
+    public User1 getEmaById(Long id) {
         return userRepository.findById(id).get();
     }
 
     @Override
-    public User updateEma(User employee) {
+    public User1 updateEma(User1 employee) {
         return userRepository.save(employee);
     }
 
