@@ -32,11 +32,6 @@ public class BankController {
         return "blog-support";
     }
 
-    @GetMapping("/pricing")
-    public String blogPricing(Model model){
-        return "blog-pricing";
-    }
-
 
     @GetMapping("/blog/add")
     public String blogAdd(Model model){

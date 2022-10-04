@@ -1,5 +1,6 @@
 package com.example.thebank.controllers;
 
+import com.example.thebank.models.Post;
 import com.example.thebank.models.User1;
 import com.example.thebank.repository.EmailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,12 @@ public class UserController {
     public String Sign(@RequestParam String email, @RequestParam String password, Model model) {
         User1 user1 = new User1(email, password);
         emailRepository.save(user1);
-        return "home";
+        return "redirect:/pricing";
+    }
+    @GetMapping("/pricing")
+    public String UserMain(Model model){
+        Iterable<User1> user1 = emailRepository.findAll();
+        model.addAttribute("user1",user1);
+        return "user-main";
     }
 }
